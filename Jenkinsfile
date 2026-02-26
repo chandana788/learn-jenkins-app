@@ -39,13 +39,14 @@ pipeline{
                     npm test
                 '''
             }
-
-            post{
-                always{
-                    junit 'test-results/*.xml'
-                }
-            }
+            
         }
         
+    }
+
+    post{
+        always{
+            junit 'test-results/junit.xml'
+        }
     }
 }
